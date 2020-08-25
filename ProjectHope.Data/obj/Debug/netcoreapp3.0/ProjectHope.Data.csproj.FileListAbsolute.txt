@@ -1,8 +1,0 @@
-D:\Work\MyProjects\ProjectHope\ProjectHope.Data\bin\Debug\netcoreapp3.0\ProjectHope.Data.deps.json
-D:\Work\MyProjects\ProjectHope\ProjectHope.Data\bin\Debug\netcoreapp3.0\ProjectHope.Data.dll
-D:\Work\MyProjects\ProjectHope\ProjectHope.Data\bin\Debug\netcoreapp3.0\ProjectHope.Data.pdb
-D:\Work\MyProjects\ProjectHope\ProjectHope.Data\obj\Debug\netcoreapp3.0\ProjectHope.Data.AssemblyInfoInputs.cache
-D:\Work\MyProjects\ProjectHope\ProjectHope.Data\obj\Debug\netcoreapp3.0\ProjectHope.Data.AssemblyInfo.cs
-D:\Work\MyProjects\ProjectHope\ProjectHope.Data\obj\Debug\netcoreapp3.0\ProjectHope.Data.dll
-D:\Work\MyProjects\ProjectHope\ProjectHope.Data\obj\Debug\netcoreapp3.0\ProjectHope.Data.pdb
-D:\Work\MyProjects\ProjectHope\ProjectHope.Data\obj\Debug\netcoreapp3.0\ProjectHope.Data.csprojAssemblyReference.cache
