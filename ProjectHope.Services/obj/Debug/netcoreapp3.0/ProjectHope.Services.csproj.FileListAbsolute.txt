@@ -1,0 +1,11 @@
+D:\Work\MyProjects\ProjectHope\ProjectHope.Services\bin\Debug\netcoreapp3.0\ProjectHope.Services.deps.json
+D:\Work\MyProjects\ProjectHope\ProjectHope.Services\bin\Debug\netcoreapp3.0\ProjectHope.Services.dll
+D:\Work\MyProjects\ProjectHope\ProjectHope.Services\bin\Debug\netcoreapp3.0\ProjectHope.Services.pdb
+D:\Work\MyProjects\ProjectHope\ProjectHope.Services\bin\Debug\netcoreapp3.0\ProjectHope.Data.dll
+D:\Work\MyProjects\ProjectHope\ProjectHope.Services\bin\Debug\netcoreapp3.0\ProjectHope.Data.pdb
+D:\Work\MyProjects\ProjectHope\ProjectHope.Services\obj\Debug\netcoreapp3.0\ProjectHope.Services.csprojAssemblyReference.cache
+D:\Work\MyProjects\ProjectHope\ProjectHope.Services\obj\Debug\netcoreapp3.0\ProjectHope.Services.AssemblyInfoInputs.cache
+D:\Work\MyProjects\ProjectHope\ProjectHope.Services\obj\Debug\netcoreapp3.0\ProjectHope.Services.AssemblyInfo.cs
+D:\Work\MyProjects\ProjectHope\ProjectHope.Services\obj\Debug\netcoreapp3.0\ProjectHope.Services.csproj.CopyComplete
+D:\Work\MyProjects\ProjectHope\ProjectHope.Services\obj\Debug\netcoreapp3.0\ProjectHope.Services.dll
+D:\Work\MyProjects\ProjectHope\ProjectHope.Services\obj\Debug\netcoreapp3.0\ProjectHope.Services.pdb

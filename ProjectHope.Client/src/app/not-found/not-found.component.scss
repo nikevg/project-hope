@@ -1,0 +1,15 @@
+@import "../shared/theming/content";
+
+:host {
+  @include host();
+}
+
+.app-not-found {
+  padding: 16px;
+
+  &__title {
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 12px;
+  }
+}

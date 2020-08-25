@@ -1,0 +1,14 @@
+@import "./const";
+@import "./elevation";
+
+@mixin host($flex-value: 60%) {
+  margin: 2px;
+  flex-basis: $flex-value;
+  @include elevation(1);
+
+  @media (max-width: $max-screen-width--small) {
+    & {
+      flex-basis: 98%;
+    }
+  }
+}

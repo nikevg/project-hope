@@ -1,0 +1,7 @@
+<app-toolbar></app-toolbar>
+<cdk-virtual-scroll-viewport itemSize="0" class="app-scrollable-content">
+  <div class="app-content" [@routeAnimation]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+  </div>
+</cdk-virtual-scroll-viewport>
+<app-message></app-message>

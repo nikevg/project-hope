@@ -1,0 +1,50 @@
+@import "../shared/theming/const";
+@import "../shared/theming/elevation";
+@import "../shared/theming/content";
+
+$indent: 15px;
+
+:host {
+  @include host();
+}
+
+.app-dashboard {
+  background-color: white;
+
+  &-templates {
+    &__header {
+      display: flex;
+      padding: $indent $indent 0 $indent;
+
+      &-title {
+        flex: 1;
+      }
+    }
+
+    &__card {
+      cursor: pointer;
+      position: absolute;
+      top: $indent;
+      left: $indent;
+      right: $indent;
+      bottom: $indent;
+
+      &:hover {
+        @include elevation(4);
+      }
+
+      &-title {
+        width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      &-more-actions {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+      }
+    }
+  }
+}

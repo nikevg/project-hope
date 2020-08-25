@@ -1,0 +1,43 @@
+@import "../../shared/theming/content";
+
+:host {
+  @include host(30%);
+}
+
+.app-sign-up {
+  &__header {
+    align-items: center;
+
+    &-title {
+      margin-bottom: 0 !important;
+    }
+
+    &-spacer {
+      flex-grow: 1;
+    }
+
+    &-spinner {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+    }
+  }
+
+  &__content {
+    &-field {
+      width: 100%;
+
+      &:first-child {
+        margin-top: 7px;
+      }
+    }
+  }
+
+  &__actions {
+    text-align: center;
+
+    &-submit {
+      width: 30%;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@import "../shared/theming/const";
+@import "../shared/theming/content";
+
+:host {
+  @include host();
+}
+
+.app-templates {
+  &__header {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    padding: 6px 8px 6px 24px;
+
+    &-filter {
+      width: 30%;
+    }
+
+    &-spacer {
+      flex-grow: 1;
+    }
+  }
+
+  &__table {
+    &-row {
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.04);
+      }
+    }
+
+    &-cell-content {
+      @media (max-width: $max-screen-width--small) {
+        & {
+          width: 120px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}

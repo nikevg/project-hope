@@ -1,0 +1,49 @@
+@import "../shared/theming/const";
+@import "../shared/theming/elevation";
+
+.app-toolbar {
+  @include elevation(4);
+
+  &__logo {
+    height: 24px;
+    margin: 0 4px 3px 0;
+  }
+
+  &__spacer {
+    flex-grow: 1;
+  }
+
+  &__section-element {
+    flex: 1;
+  }
+
+  &--fixed {
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+  }
+
+  &--show {
+    display: none;
+  }
+
+  &--hide {
+    display: flex;
+  }
+
+  &--active {
+    background: hsla(0, 0%, 100%, 0.12);
+  }
+
+  // TODO: Implementations
+  // @media (max-width: $max-screen-width--small) {
+  //   &--show {
+  //     display: flex;
+  //   }
+
+  //   &--hide {
+  //     display: none;
+  //   }
+  // }
+}

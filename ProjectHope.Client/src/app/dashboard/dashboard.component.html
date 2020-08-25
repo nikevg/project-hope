@@ -1,0 +1,49 @@
+<div class="app-dashboard">
+  <div class="app-dashboard-templates" *ngIf="userService.token">
+    <div class="app-dashboard-templates__header">
+      <h1 class="app-dashboard-templates__header-title mat-h1">Templates</h1>
+      <mat-spinner
+        diameter="20"
+        class="app-dashboard-templates__header-spinner"
+        *ngIf="isLoadingResults"
+        [@enterLeaveAnimation]
+      ></mat-spinner>
+    </div>
+    <mat-grid-list
+      [cols]="cols"
+      rowHeight="200px"
+      [@inOutAnimation]="isLoadingResults ? 'out' : 'in'"
+    >
+      <mat-grid-tile *ngFor="let template of templates">
+        <mat-card
+          matRipple
+          class="app-dashboard-templates__card"
+          (click)="open(template)"
+        >
+          <mat-card-header>
+            <mat-card-title>
+              <div class="app-dashboard-templates__card-title">
+                {{ template.name }}
+              </div>
+              <button
+                mat-icon-button
+                class="app-dashboard-templates__card-more-actions"
+                (click)="$event.stopPropagation()"
+                (mousedown)="$event.stopPropagation()"
+              >
+                <mat-icon>more_vert</mat-icon>
+              </button>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="app-dashboard-templates__card-content">
+            {{
+              template.description && template.description.length > 200
+                ? (template.description | slice: 0:200) + "..."
+                : template.description
+            }}
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>

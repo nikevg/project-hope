@@ -1,0 +1,88 @@
+<mat-toolbar color="primary" class="app-toolbar app-toolbar--fixed">
+  <mat-toolbar-row class="app-toolbar__row app-toolbar__top-row">
+    <a mat-button routerLink="/" class="app-toolbar__top-element">
+      <img src="../../favicon.ico" class="app-toolbar__logo" />
+      <span>Home</span>
+    </a>
+    <a
+      mat-button
+      routerLink="/templates"
+      routerLinkActive="app-toolbar--active"
+      class="app-toolbar__top-element app-toolbar--hide"
+      *ngIf="usersService.token"
+    >
+      Templates
+    </a>
+    <!-- TODO: Implementations
+    <a
+      mat-button
+      routerLink="/implementations"
+      routerLinkActive="app-toolbar--active"
+      class="app-toolbar--hide"
+    >
+      Implementations
+    </a>
+    -->
+    <div class="app-toolbar__spacer"></div>
+    <!-- TODO: search
+    <a mat-icon-button routerLink="/" class="app-toolbar__top-element">
+      <mat-icon>search</mat-icon>
+    </a>
+    -->
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      class="app-toolbar__top-element"
+    >
+      <mat-icon [color]="usersService.token ? 'accent' : ''"
+        >account_circle</mat-icon
+      >
+    </button>
+    <mat-menu #menu="matMenu">
+      <a mat-menu-item routerLink="/users/sign-in" *ngIf="!usersService.token">
+        <mat-icon>login</mat-icon>
+        <span>Sign In</span>
+      </a>
+      <a mat-menu-item routerLink="/users/sign-up" *ngIf="!usersService.token">
+        <mat-icon>person</mat-icon>
+        <span>Sign Up</span>
+      </a>
+      <a
+        mat-menu-item
+        routerLink="/"
+        *ngIf="usersService.token"
+        (click)="usersService.signOut()"
+      >
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Sign Out</span>
+      </a>
+    </mat-menu>
+    <!-- TODO: help
+    <a mat-icon-button routerLink="/" class="app-toolbar__top-element">
+      <mat-icon>help</mat-icon>
+    </a>
+    -->
+  </mat-toolbar-row>
+  <mat-toolbar-row
+    class="app-toolbar__row app-toolbar__section-row app-toolbar--show"
+  >
+    <a
+      mat-button
+      routerLink="/templates"
+      routerLinkActive="app-toolbar--active"
+      class="app-toolbar__section-element"
+    >
+      Templates
+    </a>
+    <!-- TODO: Implementations
+    <a
+      mat-button
+      routerLink="/implementations"
+      routerLinkActive="app-toolbar--active"
+      class="app-toolbar__section-element"
+    >
+      Implementations
+    </a>
+    -->
+  </mat-toolbar-row>
+</mat-toolbar>

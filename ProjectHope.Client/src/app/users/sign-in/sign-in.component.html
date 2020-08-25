@@ -1,0 +1,74 @@
+<form
+  [formGroup]="form"
+  class="app-sign-in__form"
+  novalidate
+  (ngSubmit)="save()"
+>
+  <mat-card class="app-sign-in mat-elevation-z0">
+    <mat-card-header class="app-sign-in__header">
+      <div mat-card-avatar>
+        <button mat-icon-button color="primary" type="button" (click)="close()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+      <mat-card-title class="app-sign-in__header-title">
+        <span>Sign In</span>
+      </mat-card-title>
+      <div class="app-sign-in__header-spacer"></div>
+      <div
+        class="app-sign-in__header-spinner"
+        *ngIf="isLoadingResults"
+        [@enterLeaveAnimation]
+      >
+        <mat-spinner diameter="20"></mat-spinner>
+      </div>
+    </mat-card-header>
+    <mat-divider [inset]="true"></mat-divider>
+    <mat-card-content class="app-sign-in__content">
+      <mat-form-field class="app-sign-in__content-field">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" required />
+        <mat-error *ngIf="form.controls.email.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="form.controls.email.hasError('email')">
+          Email is not <strong>valid</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="app-sign-in__content-field">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          [type]="hidePassword ? 'password' : 'text'"
+          formControlName="password"
+          autocomplete="new-password"
+          required
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          type="button"
+          (click)="hidePassword = !hidePassword"
+        >
+          <mat-icon>{{
+            hidePassword ? "visibility_off" : "visibility"
+          }}</mat-icon>
+        </button>
+        <mat-error *ngIf="form.controls.password.hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions class="app-sign-in__actions">
+      <button
+        mat-flat-button
+        color="primary"
+        type="submit"
+        class="app-sign-in__actions-submit"
+        [disabled]="!form.valid || isLoadingResults"
+      >
+        Sign In
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</form>

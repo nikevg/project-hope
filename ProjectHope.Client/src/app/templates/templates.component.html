@@ -1,0 +1,62 @@
+<div class="app-templates">
+  <div class="app-templates__header">
+    <mat-form-field class="app-templates__header-filter">
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="filter($event.target.value)" />
+    </mat-form-field>
+    <div class="app-templates__header-spacer"></div>
+    <mat-spinner
+      diameter="20"
+      *ngIf="isLoadingResults"
+      [@enterLeaveAnimation]
+    ></mat-spinner>
+    <button mat-icon-button color="primary" (click)="add()">
+      <mat-icon>add_circle</mat-icon>
+    </button>
+  </div>
+  <mat-divider></mat-divider>
+  <mat-table
+    [dataSource]="templates"
+    class="app-templates__table"
+    [@inOutAnimation]="isLoadingResults ? 'out' : 'in'"
+  >
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <span class="app-templates__table-cell-content">
+          {{
+            element.name.length > 75
+              ? (element.name | slice: 0:75) + "..."
+              : element.name
+          }}
+        </span>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="description">
+      <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <span class="app-templates__table-cell-content">
+          {{
+            element.description && element.description.length > 75
+              ? (element.description | slice: 0:75) + "..."
+              : element.description
+          }}
+        </span>
+      </mat-cell>
+    </ng-container>
+
+    <mat-row
+      matRipple
+      *matRowDef="let row; columns: displayedColumns"
+      class="app-templates__table-row"
+      (click)="open(row)"
+    ></mat-row>
+  </mat-table>
+
+  <mat-paginator
+    [length]="paginatorLength"
+    [pageSize]="paginatorSize"
+    [pageSizeOptions]="paginatorSizeOptions"
+    (page)="onPage($event)"
+  ></mat-paginator>
+</div>

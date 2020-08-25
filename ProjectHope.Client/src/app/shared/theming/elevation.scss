@@ -1,0 +1,7 @@
+@import "~@angular/material/theming";
+
+@mixin elevation($value) {
+  z-index: $value;
+  @include mat-elevation-transition;
+  @include mat-elevation($value);
+}

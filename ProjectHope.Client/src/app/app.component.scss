@@ -1,0 +1,36 @@
+@import "./shared/theming/const";
+@import "./shared/theming/elevation";
+
+:host {
+  position: absolute;
+  top: $toolbar-height-one-line;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fafafa;
+}
+
+// TODO: Implementations
+// @media (max-width: $max-screen-width--small) {
+//   :host {
+//     top: $toolbar-height-two-line;
+//   }
+// }
+
+.app-scrollable-content {
+  height: 100%;
+}
+
+.app-content {
+  margin-top: 32px;
+  // @include elevation(1);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: $max-screen-width--small) {
+    & {
+      margin-top: 4px;
+    }
+  }
+}

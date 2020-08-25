@@ -1,0 +1,117 @@
+<form
+  [formGroup]="form"
+  class="app-sign-up__form"
+  novalidate
+  (ngSubmit)="save()"
+>
+  <mat-card class="app-sign-up mat-elevation-z0">
+    <mat-card-header class="app-sign-up__header">
+      <div mat-card-avatar>
+        <button mat-icon-button color="primary" type="button" (click)="close()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+      <mat-card-title class="app-sign-up__header-title">
+        <span>Sign Up</span>
+      </mat-card-title>
+      <div class="app-sign-up__header-spacer"></div>
+      <div
+        class="app-sign-up__header-spinner"
+        *ngIf="isLoadingResults"
+        [@enterLeaveAnimation]
+      >
+        <mat-spinner diameter="20"></mat-spinner>
+      </div>
+    </mat-card-header>
+    <mat-divider [inset]="true"></mat-divider>
+    <mat-card-content class="app-sign-up__content">
+      <mat-form-field class="app-sign-up__content-field">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" required />
+        <mat-error *ngIf="form.controls.name.hasError('required')">
+          Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="app-sign-up__content-field">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" required />
+        <mat-error *ngIf="form.controls.email.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="form.controls.email.hasError('email')">
+          Email is not <strong>valid</strong>
+        </mat-error>
+        <mat-error *ngIf="form.controls.email.hasError('emailRegistered')">
+          Email is already <strong>registered</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="app-sign-up__content-field">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          [type]="hidePassword ? 'password' : 'text'"
+          formControlName="password"
+          autocomplete="new-password"
+          required
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          type="button"
+          (click)="hidePassword = !hidePassword"
+        >
+          <mat-icon>{{
+            hidePassword ? "visibility_off" : "visibility"
+          }}</mat-icon>
+        </button>
+        <mat-error *ngIf="form.controls.password.hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="form.controls.password.hasError('minlength')">
+          Minimum
+          <strong>{{
+            form.controls.password.errors.minlength.requiredLength
+          }}</strong>
+          characters <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="app-sign-up__content-field">
+        <mat-label>Confirm Password</mat-label>
+        <input
+          matInput
+          [type]="hidePassword ? 'password' : 'text'"
+          formControlName="confirmPassword"
+          autocomplete="new-confirmPassword"
+          required
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          type="button"
+          (click)="hidePassword = !hidePassword"
+        >
+          <mat-icon>{{
+            hidePassword ? "visibility_off" : "visibility"
+          }}</mat-icon>
+        </button>
+        <mat-error *ngIf="form.controls.confirmPassword.hasError('required')">
+          Confirm Password is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="form.controls.confirmPassword.hasError('mustMatch')">
+          Confirm Password doesn't <strong>match</strong>
+        </mat-error>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions class="app-sign-up__actions">
+      <button
+        mat-flat-button
+        color="primary"
+        type="submit"
+        class="app-sign-up__actions-submit"
+        [disabled]="!form.valid || isLoadingResults"
+      >
+        Sign Up
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</form>

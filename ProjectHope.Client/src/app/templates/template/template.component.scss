@@ -1,0 +1,146 @@
+@import "../../shared/theming/const";
+@import "../../shared/theming/content";
+
+:host {
+  @include host();
+}
+
+.app-template {
+  padding-left: 8px;
+  padding-right: 8px;
+
+  &__header {
+    margin: 0 16px;
+
+    @media (max-width: $max-screen-width--small) {
+      & {
+        margin: 0;
+      }
+    }
+
+    &-subtitle {
+      margin-bottom: 0;
+
+      @media (max-width: $max-screen-width--small) {
+        & {
+          width: 100px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+
+    &-spacer {
+      flex-grow: 1;
+    }
+
+    &-spinner {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+    }
+  }
+
+  &__content {
+    margin: 4px 16px;
+
+    @media (max-width: $max-screen-width--small) {
+      & {
+        margin: 4px 0;
+      }
+    }
+
+    &-field {
+      width: 100%;
+    }
+
+    &-tab {
+      margin-top: 7px;
+    }
+
+    &-header {
+      display: flex;
+      align-items: center;
+
+      &__filter {
+        width: 30%;
+      }
+    }
+
+    &-table {
+      width: 100%;
+      cursor: pointer;
+
+      &__cell-content {
+        @media (max-width: $max-screen-width--small) {
+          & {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          &__name {
+            width: 50px;
+          }
+
+          &__description {
+            width: 150px;
+          }
+        }
+      }
+
+      &__detail {
+        overflow: hidden;
+      }
+
+      &__row {
+        &:not(&--expanded):hover {
+          background-color: rgba(0, 0, 0, 0.04);
+        }
+
+        & td {
+          border-bottom-width: 0;
+        }
+
+        & td:first-child {
+          padding-left: 0;
+        }
+
+        & td:last-child {
+          padding-right: 0;
+        }
+
+        &-header th:first-child {
+          padding-left: 0;
+          width: 20%;
+        }
+
+        &-header th:nth-child(3) {
+          width: 10%;
+        }
+
+        &-header th:last-child {
+          padding-right: 0;
+          width: 50px;
+        }
+
+        &-detail {
+          height: 0;
+
+          & td:first-child {
+            padding-left: 0;
+          }
+
+          & td:last-child {
+            padding-right: 0;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    &--warn {
+      color: $warning-color;
+    }
+  }
+}
